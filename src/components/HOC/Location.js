@@ -36,7 +36,6 @@ const Location = Component =>
         { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }
       );
       this.watchID = navigator.geolocation.watchPosition(position => {
-        console.log('watching position...');
         const currentLongitude = JSON.stringify(position.coords.longitude);
         const currentLatitude = JSON.stringify(position.coords.latitude);
         this.setState({ currentLongitude, currentLatitude });

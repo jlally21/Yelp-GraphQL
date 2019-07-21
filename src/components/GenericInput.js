@@ -8,16 +8,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
     marginHorizontal: 24,
-    marginVertical: 12,
-    backgroundColor: 'yellow'
+    marginVertical: 12
   },
   textInput: {
-    backgroundColor: 'pink',
+    backgroundColor: 'white',
     height: 40,
     width: 100,
     flex: 1,
     borderColor: 'black',
     borderWidth: 1,
+    borderRadius: 10,
     paddingHorizontal: 5
   }
 });

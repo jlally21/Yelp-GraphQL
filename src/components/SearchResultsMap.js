@@ -21,7 +21,7 @@ const SearchResultsMap = ({ businesses }) => {
       >
         {businesses.map(business => (
           <Marker
-            key={business.name}
+            key={business.id}
             coordinate={{
               latitude: business.coordinates.latitude,
               longitude: business.coordinates.longitude

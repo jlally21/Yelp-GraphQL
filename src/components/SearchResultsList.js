@@ -1,17 +1,35 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Button, Linking, Image } from 'react-native';
 
 const styles = StyleSheet.create({
-  listItemText: { margin: 10 }
+  itemContainer: {
+    margin: 5,
+    paddingTop: 10,
+    borderColor: 'rgba(0, 0, 0, .5)',
+    borderTopWidth: 0.5,
+    alignItems: 'center'
+  },
+  titleText: { fontSize: 18, fontWeight: 'bold' },
+  image: { width: 66, height: 58 },
+  buttonsContainer: { flexDirection: 'row' }
 });
 
 const SearchResultsList = ({ businesses }) => (
   <View>
-    {businesses.map(business => (
-      <Text style={styles.listItemText} key={business.name}>
-        {business.name}
-      </Text>
-    ))}
+    {businesses.map(business => {
+      const { id, name, phone, url, photos } = business;
+      const photo = photos[0]; // use the first photo
+      return (
+        <View key={id} style={styles.itemContainer}>
+          <Text style={styles.titleText}>{name}</Text>
+          <Image source={{ uri: photo }} style={styles.image} />
+          <View style={styles.buttonsContainer}>
+            <Button title="Call" onPress={() => Linking.openURL(`tel:${phone}`)} />
+            <Button title="Website" onPress={() => Linking.openURL(url)} />
+          </View>
+        </View>
+      );
+    })}
   </View>
 );
 

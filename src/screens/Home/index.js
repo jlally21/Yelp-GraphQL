@@ -5,7 +5,7 @@ import SearchInputs from '../../components/SearchInputs';
 import withLocation from '../../components/HOC/Location';
 
 const styles = StyleSheet.create({
-  scrollViewContainer: { margin: 10, backgroundColor: 'lightgrey' }
+  scrollViewContainer: { backgroundColor: 'white', minHeight: '100%' }
 });
 
 class Home extends React.Component {
@@ -46,9 +46,8 @@ class Home extends React.Component {
 
   render() {
     const { currentLatitude, currentLongitude } = this.props;
-    const { termSearch, locationInput, locationSearch, searched } = this.state;
+    const { termSearch, locationInput, locationSearch, searched, categorySelected } = this.state;
     const searchEnabled = !!(currentLongitude && currentLatitude) || !!locationInput;
-
     return (
       <Fragment>
         <StatusBar barStyle="dark-content" />
@@ -68,6 +67,7 @@ class Home extends React.Component {
                 location={locationSearch}
                 latitude={currentLatitude}
                 longitude={currentLongitude}
+                category={categorySelected}
               />
             )}
           </ScrollView>
