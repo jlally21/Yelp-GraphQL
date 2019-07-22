@@ -11,19 +11,3 @@ const client = new ApolloClient({
 });
 
 export default client;
-
-// client
-//   .query({
-//     query: gql`
-//       {
-//         search(term: "burrito", location: "san francisco", limit: 5) {
-//           total
-//           business {
-//             name
-//             url
-//           }
-//         }
-//       }
-//     `
-//   })
-//   .then(result => console.log(result));
