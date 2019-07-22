@@ -1,7 +1,7 @@
 import React from 'react';
 import { PermissionsAndroid, Platform } from 'react-native';
 
-// Borrowed from https://aboutreact.com/react-native-geolocation/
+// Logic borrowed from https://aboutreact.com/react-native-geolocation/
 const Location = Component =>
   class extends React.Component {
     constructor(props) {
