@@ -11,7 +11,8 @@ const styles = StyleSheet.create({
   },
   titleText: { fontSize: 18, fontWeight: 'bold' },
   image: { width: 66, height: 58 },
-  buttonsContainer: { flexDirection: 'row' }
+  buttonsContainer: { flexDirection: 'row', alignItems: 'center' },
+  margin10: { margin: 10 }
 });
 
 const SearchResultsList = ({ businesses }) => (
@@ -24,8 +25,12 @@ const SearchResultsList = ({ businesses }) => (
           <Text style={styles.titleText}>{name}</Text>
           <Image source={{ uri: photo }} style={styles.image} />
           <View style={styles.buttonsContainer}>
-            <Button title="Call" onPress={() => Linking.openURL(`tel:${phone}`)} />
-            <Button title="Website" onPress={() => Linking.openURL(url)} />
+            <View style={styles.margin10}>
+              <Button title="Call" onPress={() => Linking.openURL(`tel:${phone}`)} />
+            </View>
+            <View style={styles.margin10}>
+              <Button title="Website" onPress={() => Linking.openURL(url)} />
+            </View>
           </View>
         </View>
       );
