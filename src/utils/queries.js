@@ -23,18 +23,10 @@ export const SEARCH = gql`
         id
         url
         phone
-        rating
         photos
         coordinates {
           latitude
           longitude
-        }
-        categories {
-          alias
-          parent_categories {
-            title
-            alias
-          }
         }
       }
     }
