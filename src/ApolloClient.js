@@ -6,7 +6,8 @@ const API_KEY =
 const client = new ApolloClient({
   uri: 'https://api.yelp.com/v3/graphql',
   headers: {
-    Authorization: `Bearer ${API_KEY}`
+    Authorization: `Bearer ${API_KEY}`,
+    'Accept-Language': 'en_US'
   }
 });
 
